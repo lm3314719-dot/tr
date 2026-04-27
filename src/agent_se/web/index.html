@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevForge Pro - Multi Agent Platform</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>⚡ DevForge Pro</h1>
+      <div class="actions">
+        <button id="runFlow">🚀 Run Workflow</button>
+        <button id="clear">🗑️ Clear</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>Configurazione</h2>
+        <label>Project dir <input id="projectDir" value="./workspace" /></label>
+        <label>Goal <input id="goal" placeholder="Crea piattaforma SaaS con test" /></label>
+        <label>Max iterations <input id="maxIterations" type="number" min="1" max="500" value="20" /></label>
+
+        <h3>Agenti</h3>
+        <div id="agents"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Chat singolo agente</h2>
+        <label>Prompt <textarea id="prompt" rows="4" placeholder="Chiedi qualcosa a un agente..."></textarea></label>
+        <label>Seleziona agente
+          <select id="agentSelect">
+            <option value="deepseek-ai/deepseek-v4-pro">DeepSeek (Coder)</option>
+            <option value="z-ai/glm-5.1">GLM (Planner)</option>
+            <option value="minimaxai/minimax-m2.7">MiniMax (Debugger/Creative)</option>
+          </select>
+        </label>
+        <button id="sendChat">Invia</button>
+        <pre id="chatOut"></pre>
+      </section>
+
+      <section class="panel wide">
+        <h2>Output workflow</h2>
+        <pre id="workflowOut"></pre>
+      </section>
+    </main>
+
+    <script src="/assets/app.js"></script>
+  </body>
+</html>
